@@ -3137,6 +3137,98 @@ import re
 # print(re.findall(reg, s3))
 # print(re.findall(reg, s4))
 
-str1 = "Я изучая Nython. Мне нравится Nython. Nython очень интересный язык программирования."
-print(str1)
-print(str1.replace("Nython", "Python", 2))  # заменяет вхождение подстроки в строке
+# str1 = "Я изучая Nython. Мне нравится Nython. Nython очень интересный язык программирования."
+# print(str1)
+# print(str1.replace("Nython", "Python", 2))  # заменяет вхождение подстроки в строке
+
+# a = r'Замените в этой стрОке все появившиеся буквы "О", кроме первого и последнего вхождения.'
+# print(a)
+# s = a[:a.find('о') + 1]
+# b = a[a.find('о') + 1: a.rfind('о')]
+# c = a[a.rfind('о'):]
+# print(s + b.replace('о', 'О') + c)
+# print(a.replace("о", "О", a.count("о")-1).replace("О", "о", 1))
+
+# s = "-"
+# seq = ("a", "b", "c")
+# print(s.join(seq))
+#
+# print("..".join(['1', '99']))
+# print(':'.join("Hello"))
+#
+# print("Строка разделенная пробелами".split())
+# print(("www.python.org.ru".split(".", 2)))
+# print(("www.python.org.ru".rsplit(".", 2)))
+
+# a = input("-> ").split()
+# list(map(int, a))
+# print(a)
+
+# a = input("Введите ФИО: ").split()
+# print(f'{a[0]} {a[1][0]}.{a[2][0]}.')
+
+# регулярные выражения
+
+
+import re
+
+# print(dir(re))
+
+# s = "Я ищу совпадения в 2023 году. И я их найду в 2 счёта."
+# reg = 'Я ищу'
+# print(re.findall(reg, s))  # возвращает список,содержащий все совпадения
+# print(re.search(reg, s))  # местоположение первого совпадения объекта
+# # print(re.search(reg, s).span())  #
+# # print(re.search(reg, s).start())  #
+# # print(re.search(reg, s).end())  #
+# # print(re.search(reg, s).group())  #
+# print(re.match(reg, s))
+#
+# reg = r'\.'
+# print(re.split(reg, s))
+#
+# print(re.sub(reg, "!", s, 1))  # поиск и замена
+
+
+s = "Я ищу совпадения в 2023 году. И я их найду в 2000000 - счёта.[987_45] Hello"
+# reg = r'20?'
+# reg = '2[0][0-2][0-9]'
+# reg = r'[А-яЁё. \[\]-]'
+# reg = r"[^А-я]"
+# print(re.findall(reg, s))
+# print(ord("ё"))
+# print(ord("Ё"))
+
+# s1 = r'Час в 24-часовом формате от 00 до 23. 2021-06-15Т21:45. Минуты,в диапозоне от 00 до 59. 2021-06-15Т01:09.'
+# reg = "[0-2][0-9]:[0-5][0-9]"
+# print(re.findall(reg, s1))
+
+# d = "Цифры: 7, +17, -42, 0012, 0..3"
+# print(re.findall(r'[+-]?\d+\.?\d+', d))
+
+
+# d = "05-03-1987 # Дата рождения"
+#
+# print("Дата рождения:", re.sub(r"#.*", "", d))
+#
+# # Дата рождения: 05-03-1987
+#
+# print('Дата рождения:', re.sub('-', '.', re.sub(r'\s#.*', '', d)))
+
+# d = "author=Пушкин А.С.; title = Евгений Онегин; price =200; year= 1831"
+# print(d)
+# # pattern = r'\w+\s*=\s*\w+\s*[.\w]*'
+# pattern = r'\w+\s*=[^;]+'
+# print(re.findall(pattern, d))
+
+# s1 = "12 сентября 2023 года 232323"
+# reg = r'\d{2,4}'
+# print(re.findall(reg, s1))
+
+# test = '+7 499 456-45-78, +74994564578, 7 (499) 456 45 78, 74994564578'
+# print(test)
+# print(re.findall(r'\+?7\d{10}', test))
+
+# reg = r'^\w+\s\w+'
+reg = r'\w+$'
+print(re.findall(reg, s))
