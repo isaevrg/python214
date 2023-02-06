@@ -3190,7 +3190,7 @@ import re
 # print(re.sub(reg, "!", s, 1))  # поиск и замена
 
 
-s = "Я ищу совпадения в 2023 году. И я их найду в 2000000 - счёта.[987_45] Hello"
+# s = "Я ищу совпадения в 2023 году. И я их найду в 2000000 - счёта.[987_45] Hello"
 # reg = r'20?'
 # reg = '2[0][0-2][0-9]'
 # reg = r'[А-яЁё. \[\]-]'
@@ -3230,5 +3230,138 @@ s = "Я ищу совпадения в 2023 году. И я их найду в 2
 # print(re.findall(r'\+?7\d{10}', test))
 
 # reg = r'^\w+\s\w+'
-reg = r'\w+$'
-print(re.findall(reg, s))
+# reg = r'\w+$'
+# print(re.findall(reg, s))
+
+# print(re.findall(r'\w+', '12 + й'))
+# print(re.findall(r'\w+', '12 + й', re.A))
+
+# text = 'hello world'
+# print(re.findall(r'\w\+', text, re.DEBUG))
+
+# s = "Я ищу совпадения в 2023 году. И я их найду в 2000000 - счёта.[987_45] Hello"
+# print(re.findall(r'я', s, re.IGNORECASE))
+
+# text = """
+# one
+# two
+#
+# """
+# print(re.findall(r'one.\w+', text, re.DOTALL))
+# print(re.findall(r'two$', text, re.MULTILINE))
+
+
+# print(re.findall("""
+# [a-z.-]+ # part 1
+# @
+# [a-z.-]+
+# """, "test@mail.ru", re.VERBOSE))
+
+# text = """Python
+# python,
+# PYTHON
+# """
+# reg = "(?mi)^\w+"
+# print(re.findall(reg, text))
+
+
+# def valid_name(name):
+#     return re.findall("^[a-z0-9_-]{3,16}$", name, re.I)
+#
+#
+# print(valid_name("Python_master"))
+# print(valid_name("Pyt$"))
+
+# text = "<body>Пример жадное соответствия регулярных выражений</body>"
+# print(re.findall('<.*?>', text))
+
+
+# s = "<p>Изображение <img alt='картинка' src = 'bg.jpg'> - фон страницы</p>"
+# # reg = '<img.*?>'
+# reg = r'<img\s+[^>]*src\s*=\s*[^>]+>'
+# print(re.findall(reg, s))
+
+# s = 'Петр, Ольга и Виталий'
+# # reg = 'Петр|Ольга|Виталий'
+# # print(re.findall(reg, s))
+
+# s = 'int = 4, float = 4.0, double = 8.0f'
+# # reg = r'(?:int|double)\s*=\s*\d+[.\w]*'
+# reg = r'((int|double)\s*=\s*\d+[.\w]*)'
+# print(re.findall(reg, s))
+
+# s = '127.0.0.1'
+# s = '192.168.255.255'
+# reg = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+# reg = r'(?:\d{1,3}.){1,3}\d{1,3}'
+# print(re.findall(reg, s)[0])
+
+# s = "World2016, PS6, AI5"
+# reg = r'[a-z]+(\d*)'
+# print(re.findall(reg, s, re.I))
+
+# s = "5 + 7*2 - 4"
+# reg = r'\s*([+*-])\s*'
+# print(re.split(reg, s))
+
+# s = input("Введите дату в формате dd-mm-YYYY: ")
+# reg = r'(0[1-9]|[12]\d|3[01])-(0[1-9]|1[0-2])-(19[0-9][0-9]|20\d{2})'
+# print(re.findall(reg, s))
+# print(s)
+
+# s = "Я ищу совпадения в 2023 году. И я их найду в 2 счёта.["
+# reg = r'([0-9]+)\s(\D+)'
+# print(re.findall(reg, s))
+# print(re.search(reg, s).group())
+# m = re.search(reg, s)
+# print(m[0])
+# print(m[1])
+# print(m[2])
+
+# text = """
+# Самара
+# Москва
+# Тверь
+# Уфа
+# Казань
+# """
+# count = 0
+#
+# def repl_find(m):
+#     global count
+#     count += 1
+#     return f"<option value='{count}'>{m.group(1)}</option>\n"
+#
+#
+# print(re.sub(r"\s*(\w+)\s*", repl_find, text))
+
+
+# s = "<p>Изображение <img alt='картинка' src ='bg.jpg'> - фон страницы</p>"
+# # reg = r'<img\s+[^>]*src\s*=\s*([\'"])(.+)\1>'
+# reg = r'<img\s+[^>]*src\s*=\s*([\'"])(.+)\1>'
+# print(re.findall(reg, s)[0][1])
+
+
+# s = "Самолет прилетает 10/23/2022. Будем рады вас видеть после 10/24/2022"  # 24.10.2022
+# reg = r"(\d{2})/(\d{2})/(\d{4})"
+# print(re.sub(reg, r'\2.\1.\3', s))
+
+# s = "yandex.com and yandex.ru"  # http://yandex.com and http://yandex.ru
+# reg = r"(([a-z0-9-]{2,}\.)+[a-z]{2,4})"
+# print(re.sub(reg, r'http://\1', s))
+
+
+def valid_name(name):
+    return re.findall("^[a-z0-9_-]{3,16}$", name, re.I)
+
+
+print(valid_name("Python_master"))
+print(valid_name("Pyt$"))
+
+
+
+
+
+
+
+

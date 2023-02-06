@@ -2,7 +2,7 @@ import re
 
 
 # def login(a):
-#     return re.findall(r'^[A-z0-9_@-]{6,18}$', password)
+#     return re.findall(r'^[A-Za-z0-9_@-]{6,18}$', password)
 #
 #
 # password = input("Задайте пароль: ")
