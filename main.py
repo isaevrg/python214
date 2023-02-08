@@ -3351,13 +3351,6 @@ import re
 # print(re.sub(reg, r'http://\1', s))
 
 
-def valid_name(name):
-    return re.findall("^[a-z0-9_-]{3,16}$", name, re.I)
-
-
-print(valid_name("Python_master"))
-print(valid_name("Pyt$"))
-
 
 
 
