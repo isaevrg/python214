@@ -3356,5 +3356,93 @@ import re
 
 
 
+# Рекурсия
+# def elevator(n):
+#     if n == 0:
+#         print("Вы в подвале")
+#         return
+#     print("=>", n)
+#     elevator(n - 1)
+#     print(n, end=" ")
+#
+#
+# n = int(input("На каком Вы этаже: "))
+# elevator(n)
+
+
+# def sum_list(lst):
+#     res = 0
+#     for i in lst:
+#         res += i
+#     return res
+#
+#
+# print(sum_list([1,3,5,7,9]))
+
+
+# def sum_list(lst):
+#     if len(lst) == 1:
+#         print(lst, "=> lst[0]", lst[0])
+#         return lst[0]
+#     else:
+#         print(lst, "=> lst[0]", lst[0])
+#         return lst[0] + sum_list(lst[1:])
+#
+#
+# print(sum_list([1,3,5,7,9]))
+
+
+# def to_str(n, base):
+#     convert = "0123456789ABCDEF"
+#     if n < base:
+#         return convert[n]
+#     else:
+#         return to_str(n // base, base) + convert[n % base]
+#
+#
+# n = to_str(254, 16)
+# print(type(n))
+# print(n)
+
+names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill"], "Ann"]
+# print(names[0])
+# print(isinstance(names[0], list))
+# print(names[0])
+# print(isinstance(names[1][1], list))
+print(names)
+
+
+def count_items(item_list):
+    count = 0
+    for item in item_list:
+        if isinstance(item, list):
+            count += count_items(item)
+        else:
+            count += 1
+
+    return count
+
+
+print(count_items(names))
+
+count = 0
+for i in names:
+    if isinstance(i, list):
+        for j in i:
+            if isinstance(j, list):
+                for k in j:
+                    count += 1
+            else:
+                count += 1
+    else:
+        count += 1
+print(count)
+
+
+
+
+
+
+
 
 
