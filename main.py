@@ -3611,44 +3611,131 @@ import time
 
 
 # def quick_sort(a):
-# if len(a) > 1:
-#     x = a[(len(a) - 1) // 2]
-
-# low = [i for i in a if i < x]
-# eq = [i for i in a if i == x]
-# hi = [i for i in a if i > x]
-# a = quick_sort(low) + eq + quick_sort(hi)
-
-# return a
-
-
+#     if len(a) > 1:
+#         x = a[(len(a) - 1) // 2]
+#
+#         low = [i for i in a if i < x]
+#         eq = [i for i in a if i == x]
+#         hi = [i for i in a if i > x]
+#         a = quick_sort(low) + eq + quick_sort(hi)
+#
+#     return a
+#
+#
 # lst = [9, 5, -3, 4, 7, 8, -8]
 # print(lst)
 # lst = quick_sort(lst)
 # print(lst)
 
-a = [5, 9, 6, 7]
-b = [3, 11, 8]
-c = [2, 4]
-d = [10, 1, 12]
-print(a, b, c, d)
+
+# Файлы
+
+# f = open('text.txt')  # mode='r'
+# print(*f)
+# print(f)
+# print(f.mode)
+# print(f.name)
+# print(f.encoding)
+# f.close()
+# print(f.closed)
 
 
-# dan = input("1 - сортировать по убыванию\n2 - сортировать по возрастанию\n-> ")
+# f = open('text.txt')
+# print(f.read(3))
+# print(f.read())
+# f.close()
 
 
-def sort(s):
-    dan = int(input("1 - сортировать по убыванию\n2 - сортировать по возрастанию\n-> "))
-    if dan == 1:
-        e.sort(reverse=True)
-    if dan == 2:
-        e.sort()
-    return e
+# f = open('test.txt')
+# print(f.read())
+# print(f.readline())
+# print(f.readline(8))
+# print(f.readline())
+# print(f.readline())
+# print(f.readlines(16))
+# print(f.readlines())
+# f.close()
+
+# f = open('test.txt')
+# for line in f:
+#     print(line[:10])
+# f.close()
+
+# f = open('test.txt')
+# print(len(f.readlines()))
+# f.close()
+
+# i = 0
+# f = open('test.txt')
+# for line in f:
+    # print(line[:10])
+#     i += 1
+# f.close()
+# print(i)
+
+# f = open('test1.txt', 'w')
+# f.write("Hello\nWorld!\n")
+# f.close()
+
+# f = open('test1.txt', 'a')
+# f.write("New text.")
+# f.close()
 
 
-e = a + b + c + d
-# print(e)
-sort(e)
-print(e)
+
+
+
+# f = open('xyz.txt', 'a')
+# lines = ['\nThis is line1', '\nThis is line2']
+# f.writelines(lines)
+# f.close()
+
+
+
+# f = open('xyz.txt', 'w')
+# lst = [str(i**5) for i in range(1, 20)]
+# print(lst)
+# for index in lst:
+#     f.write(index)
+# f.close()
+
+
+# my_file = open('text1.txt', 'w')
+# my_file.write("Замените строку в текстовом файле;\nизменить строку в списке;\nзаписать список в файле;")
+# my_file.close()
+#
+# my_file = open('text1.txt', 'r')
+# read_file = my_file.readlines()
+# print(read_file)
+# read_file[1] = "Hello World\n"
+# print(read_file)
+# my_file.close()
+#
+# my_file = open('text1.txt', 'w')
+# my_file.writelines(read_file)
+# my_file.close()
+
+# my_file = open('text2.txt', 'w')
+# my_file.write('Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;')
+# my_file.close()
+# my_file = open('text2.txt', 'r')
+# lst = my_file.readlines()
+# my_file.close()
+# print(lst)
+# num = int(input('Номер строки для удаления: '))
+# lst.pop(num - 1)print(lst)
+# my_file = open('text2.txt', 'w')
+# my_file.write(''.join([*lst]))
+# my_file.close()
+
+
+
+
+
+
+
+
+
+
 
 
