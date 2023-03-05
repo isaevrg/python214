@@ -3646,7 +3646,8 @@ import time
 # f.close()
 
 
-# f = open('test.txt')
+# f = open('test.txt', 'w')
+# f.write('Работа с файлами реализуется как правило с применением файловых систем, обеспечивающих организацию работы с файлами и абстракцию над носителями информации.')
 # print(f.read())
 # print(f.readline())
 # print(f.readline(8))
@@ -3668,7 +3669,7 @@ import time
 # i = 0
 # f = open('test.txt')
 # for line in f:
-    # print(line[:10])
+# print(line[:10])
 #     i += 1
 # f.close()
 # print(i)
@@ -3682,32 +3683,28 @@ import time
 # f.close()
 
 
-
-
-
 # f = open('xyz.txt', 'a')
-# lines = ['\nThis is line1', '\nThis is line2']
+# lines = ['This is line1', '\nThis is line2']
 # f.writelines(lines)
 # f.close()
-
 
 
 # f = open('xyz.txt', 'w')
 # lst = [str(i**5) for i in range(1, 20)]
 # print(lst)
 # for index in lst:
-#     f.write(index)
+#     f.write(index + '\n')
 # f.close()
 
 
 # my_file = open('text1.txt', 'w')
 # my_file.write("Замените строку в текстовом файле;\nизменить строку в списке;\nзаписать список в файле;")
 # my_file.close()
-#
+# #
 # my_file = open('text1.txt', 'r')
 # read_file = my_file.readlines()
 # print(read_file)
-# read_file[1] = "Hello World\n"
+# read_file[1] = "Hello World!\n"
 # print(read_file)
 # my_file.close()
 #
@@ -3718,15 +3715,86 @@ import time
 # my_file = open('text2.txt', 'w')
 # my_file.write('Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;')
 # my_file.close()
+#
 # my_file = open('text2.txt', 'r')
 # lst = my_file.readlines()
 # my_file.close()
+#
 # print(lst)
 # num = int(input('Номер строки для удаления: '))
-# lst.pop(num - 1)print(lst)
+# lst.pop(num - 1)
+# print(lst)
 # my_file = open('text2.txt', 'w')
 # my_file.write(''.join([*lst]))
 # my_file.close()
+
+# f = open('text.txt', 'r')
+# print(f.read(3))
+# print(f.tell())
+# print(f.seek(1))
+# print(f.read())
+# print(f.tell())
+# f.close()
+
+# f = open('text.txt', 'w+')
+# print(f.write('I am learning Python'))
+# print(f.seek(3))
+# print(f.write('-new string-'))
+# print(f.tell())
+# f.close()
+
+# f = open('text.txt', 'a+')
+# print(f.mode)
+# f.mode = 'w+'
+# print(f.mode)
+# print(f.tell())
+# print(f.read())
+# print(f.seek(0))
+# print(f.read())
+# f.close()
+
+# with open('text.txt', 'w+') as f:
+#     print(f.write('1234567890'))
+#
+# with open('text.txt', 'r') as f:
+#     for line in f:
+#         print(line)
+
+# file_name = 'res.txt'
+# lst = [4.5, 2.8, 3.9, 1.0, 0.3, 4.33, 7.77]
+# with open(file_name, 'w+') as my_file:
+#     my_file.write('\t'.join(map(str, lst)))
+
+# with open(file_name, 'r+') as my_file:
+#     new_lst = my_file.read().split('\t')
+#
+# print(new_lst)
+# print(len(new_lst))
+# print(list(map(float, new_lst)))
+# print(f'Sum = {sum(map(float, new_lst))}')
+
+
+def longest_world(file):
+    with open(file, 'r') as text:
+        w = text.read().split()
+        maax_length = len(max(w, key=len))
+        print(w)
+        print(maax_length)
+        res = [word for word in w if len(word) == maax_length]
+        if len(res) == 1:
+            return res[0]
+        return res
+
+
+print(longest_world('test.txt'))
+
+
+
+
+
+
+
+
 
 
 
