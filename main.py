@@ -3774,28 +3774,72 @@ import time
 # print(f'Sum = {sum(map(float, new_lst))}')
 
 
-def longest_world(file):
-    with open(file, 'r') as text:
-        w = text.read().split()
-        maax_length = len(max(w, key=len))
-        print(w)
-        print(maax_length)
-        res = [word for word in w if len(word) == maax_length]
-        if len(res) == 1:
-            return res[0]
-        return res
+# def longest_world(file):
+#     with open(file, 'r') as text:
+#         w = text.read().split()
+#         maax_length = len(max(w, key=len))
+#         print(w)
+#         print(maax_length)
+#         res = [word for word in w if len(word) == maax_length]
+#         if len(res) == 1:
+#             return res[0]
+#         return res
+#
+#
+# print(longest_world('test.txt'))
+
+# text = "Строка №1\nСтрока №2\nСтрока №3\nСтрока №4\nСтрока №5\nСтрока №6\nСтрока №7\nСтрока №8\nСтрока №9\nСтрока №10\n"
+#
+# with open('one.txt', 'w') as f:
+#     f.write(text)
+
+# read_file = 'one.txt'
+# write_file = 'two.txt'
+#
+# with open(read_file, 'r') as fr, open(write_file, 'w') as fw:
+#     for line in fr:
+#         line = line.replace('Строка', "Линия - ")
+#         fw.write(line)
+
+import os
+
+# print(os.getcwd())
+#
+# print(os.listdir())
+# print(os.listdir("../.."))
+
+# os.mkdir("folder")
+
+# os.makedirs('nested1/nested2/nested3')
+
+# os.remove('xyz.txt')
+
+# os.rmdir('folder')
+
+# os.rename('nested1', 'test')
+
+# os.rename('two.txt', 'test/test1.txt')
+# os.renames('text2.txt', 'text123/test28.txt')
+
+# for root, dirs, files in os.walk('test', topdown=False):
+#     print("Root:", root)
+#     print("Sub_dirs:", dirs)
+#     print("Files:", files)
 
 
-print(longest_world('test.txt'))
+# def remove_empty_dirs(root_tree):
+#     print(f"Удаление пустых директорий в ветви {root_tree}")
+#     print("- * 50")
+#     for root, dirs, files in os.walk(root_tree):
+#         if not os.listdir(root):
+#             os.rmdir(root)
+#             print(f"Дректория {root} удалена")
+#     print("- * 50")
+#
+#
+# remove_empty_dirs('test')
 
-
-
-
-
-
-
-
-
+# print(os.path.split())
 
 
 
